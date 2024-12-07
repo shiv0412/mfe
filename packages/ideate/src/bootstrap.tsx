@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import { createMemoryHistory, createBrowserHistory } from "history";
 
 import App from "./App";
@@ -9,6 +9,7 @@ const mount = (
   element: Element,
   { onNavigate, defaultHistory, initialPath }: any
 ) => {
+  const root = createRoot(element);
   const history =
     defaultHistory ||
     createMemoryHistory({
@@ -19,7 +20,11 @@ const mount = (
     history.listen(onNavigate);
   }
 
-  ReactDOM.render(<App history={history} />, element);
+  root.render(
+    <React.StrictMode>
+      <App history={history} />
+    </React.StrictMode>
+  );
 
   return {
     onParentNavigate({ pathname: nextPathname }: any) {
