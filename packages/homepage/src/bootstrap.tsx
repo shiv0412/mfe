@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import { createMemoryHistory, createBrowserHistory } from "history";
 
 import App from "./App";
-import { RouteHash } from "./components/models/SharedModals";
 
 // Mount function to start up the app
 const mount = (
