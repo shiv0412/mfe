@@ -13,7 +13,7 @@ const App: React.FC<AppProps> = ({ history }) => {
     <div>
       <Router history={history}>
         <Switch>
-          <Route exact path="/" component={Landing} />
+          <Route exact path="/ideate" component={Landing} />
         </Switch>
       </Router>
     </div>

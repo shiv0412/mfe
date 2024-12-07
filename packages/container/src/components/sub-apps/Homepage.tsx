@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 import { RouteHash } from "./models/SubAppModals";
 
-export default () => {
+const Homepage: React.FC = () => {
   const ref = useRef(null);
   const history = useHistory();
 
@@ -22,5 +22,7 @@ export default () => {
     history.listen(onParentNavigate);
   }, []);
 
-  return <div key={"dashboard"} ref={ref} />;
+  return <div key={"homepage"} ref={ref} />;
 };
+
+export default Homepage;

@@ -3,7 +3,7 @@ import { mount } from "ideate/Ideate";
 import { useHistory } from "react-router-dom";
 import { RouteHash } from "./models/SubAppModals";
 
-export default () => {
+const Ideate: React.FC = () => {
   const ref = useRef(null);
   const history = useHistory();
 
@@ -21,5 +21,7 @@ export default () => {
     history.listen(onParentNavigate);
   }, []);
 
-  return <div key={"marketing"} ref={ref} />;
+  return <div key={"ideate"} ref={ref} />;
 };
+
+export default Ideate;

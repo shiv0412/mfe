@@ -1,9 +1,9 @@
 import React from "react";
 
-const Landing:React.FC = () => {
+const Landing: React.FC = () => {
   return (
     <React.Fragment>
-      <div>dashboard app</div>
+      <div>Homepage app</div>
     </React.Fragment>
   );
 };

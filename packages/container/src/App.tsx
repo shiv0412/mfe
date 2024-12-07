@@ -1,6 +1,6 @@
 import React from "react";
-import MarketingApp from "./components/sub-apps/MarketingApp";
-import DashboardApp from "./components/sub-apps/DashboardApp";
+import Ideate from "./components/sub-apps/Ideate";
+import Homepage from "./components/sub-apps/Homepage";
 import { Link, Switch, Route } from "react-router-dom";
 
 export default () => {
@@ -11,13 +11,12 @@ export default () => {
       <nav>
         <Link to="/">Home</Link>
         <span style={{ paddingLeft: "16px" }}></span>
-        <Link to="/dashboard">Dashboard</Link>
+        <Link to="/ideate">Ideate</Link>
       </nav>
       <hr />
       <Switch>
-        <Route path="/" exact component={MarketingApp}></Route>
-        <Route path="/pricing" exact component={DashboardApp}></Route>
-        <Route path="/dashboard" exact component={DashboardApp}></Route>
+        <Route path="/" exact component={Homepage}></Route>
+        <Route path="/ideate" exact component={Ideate}></Route>
       </Switch>
       <hr />
     </div>
