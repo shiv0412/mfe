@@ -8,15 +8,15 @@ const commonConfig = require("./webpack.common");
 const devConfig = {
   mode: "development",
   devServer: {
-    port: 8081,
+    port: 8082,
     historyApiFallback: true,
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "marketing",
+      name: "homepage",
       filename: "remoteEntry.js",
       exposes: {
-        "./Marketing": "./src/bootstrap",
+        "./Homepage": "./src/bootstrap",
       },
       shared: packageJson.dependencies,
     }),

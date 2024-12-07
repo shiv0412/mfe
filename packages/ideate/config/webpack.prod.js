@@ -1,26 +1,24 @@
-const { merge } = require("webpack-merge");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const { merge } = require("webpack-merge");
 
 const packageJson = require("../package.json");
 const commonConfig = require("./webpack.common");
 
-const devConfig = {
-  mode: "development",
-  devServer: {
-    port: 8082,
-    historyApiFallback: true,
+const prodConfig = {
+  mode: "production",
+  output: {
+    filename: "[name].[contenthash].js",
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "dashboard",
+      name: "ideate",
       filename: "remoteEntry.js",
       exposes: {
-        "./Dashboard": "./src/bootstrap",
+        "./Ideate": "./src/bootstrap",
       },
       shared: packageJson.dependencies,
     }),
   ],
 };
 
-module.exports = merge(commonConfig, devConfig);
+module.exports = merge(commonConfig, prodConfig);

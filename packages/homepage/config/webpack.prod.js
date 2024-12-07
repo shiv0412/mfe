@@ -11,10 +11,10 @@ const prodConfig = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "marketing",
+      name: "homepage",
       filename: "remoteEntry.js",
       exposes: {
-        "./Marketing": "./src/bootstrap",
+        "./Homepage": "./src/bootstrap",
       },
       shared: packageJson.dependencies,
     }),
