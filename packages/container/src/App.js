@@ -11,8 +11,6 @@ export default () => {
       <nav>
         <Link to="/">Home</Link>
         <span style={{ paddingLeft: "16px" }}></span>
-        <Link to="/pricing">Pricing</Link>
-        <span style={{ paddingLeft: "16px" }}></span>
         <Link to="/dashboard">Dashboard</Link>
       </nav>
       <hr />
