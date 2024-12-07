@@ -23,10 +23,10 @@ const mount = (
   ReactDOM.render(<App history={history} />, element);
 
   return {
-    onParentNavigate(pathname: RouteHash) {
-      const nextPathname = history.location.pathname;
+    onParentNavigate({ pathname: nextPathname }: any) {
+      const { pathname } = history.location;
 
-      if (pathname.pathname !== nextPathname) {
+      if (pathname !== nextPathname) {
         history.push(nextPathname);
         // ReactDOM.unmountComponentAtNode(element);
       }

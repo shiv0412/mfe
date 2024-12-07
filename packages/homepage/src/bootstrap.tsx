@@ -6,7 +6,10 @@ import App from "./App";
 import { RouteHash } from "./components/models/SharedModals";
 
 // Mount function to start up the app
-const mount = (element:Element, { onNavigate, defaultHistory, initialPath }:any) => {
+const mount = (
+  element: Element,
+  { onNavigate, defaultHistory, initialPath }: any
+) => {
   const history =
     defaultHistory ||
     createMemoryHistory({
@@ -20,10 +23,10 @@ const mount = (element:Element, { onNavigate, defaultHistory, initialPath }:any)
   ReactDOM.render(<App history={history} />, element);
 
   return {
-    onParentNavigate(pathname:RouteHash) {
-      const nextPathname  = history.location.pathname;
+    onParentNavigate({ pathname: nextPathname }: any) {
+      const { pathname } = history.location;
 
-      if (pathname.pathname !== nextPathname) {
+      if (pathname !== nextPathname) {
         history.push(nextPathname);
         // ReactDOM.unmountComponentAtNode(element);
       }
