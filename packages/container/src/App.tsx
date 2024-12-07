@@ -1,6 +1,6 @@
 import React from "react";
-import MarketingApp from "./components/MarketingApp";
-import DashboardApp from "./components/DashboardApp";
+import MarketingApp from "./components/sub-apps/MarketingApp";
+import DashboardApp from "./components/sub-apps/DashboardApp";
 import { Link, Switch, Route } from "react-router-dom";
 
 export default () => {

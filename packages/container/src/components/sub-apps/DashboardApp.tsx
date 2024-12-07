@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from "react";
 import { mount } from "dashboard/Dashboard";
 import { useHistory } from "react-router-dom";
 
+import { RouteHash } from "./models/SubAppModals";
+
 export default () => {
   const ref = useRef(null);
   const history = useHistory();
@@ -9,9 +11,9 @@ export default () => {
   useEffect(() => {
     const { onParentNavigate } = mount(ref.current, {
       initialPath: history.location.pathname,
-      onNavigate: ({ pathname: nextPathname }) => {
-        const { pathname } = history.location;
-        if (pathname !== nextPathname) {
+      onNavigate: ( pathname:RouteHash ) => {
+        const nextPathname  = history.location.pathname;
+        if (pathname.pathname !== nextPathname) {
           history.push(nextPathname);
         }
       },
