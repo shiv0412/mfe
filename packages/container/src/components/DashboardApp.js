@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import { mount } from "marketing/Marketing";
+import { mount } from "dashboard/Dashboard";
 import { useHistory } from "react-router-dom";
 
 export default () => {
@@ -20,5 +20,5 @@ export default () => {
     history.listen(onParentNavigate);
   }, []);
 
-  return <div key={"marketing"} ref={ref} />;
+  return <div key={"dashboard"} ref={ref} />;
 };
