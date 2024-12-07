@@ -1,9 +1,14 @@
 import React from "react";
 import { Switch, Route, Router } from "react-router-dom";
+import { History } from "history";
 
 import Landing from "./components/Landing";
 
-export default ({ history }) => {
+interface AppProps {
+  history: History;
+}
+
+const App: React.FC<AppProps> = ({ history }) => {
   return (
     <div>
       <Router history={history}>
@@ -14,3 +19,5 @@ export default ({ history }) => {
     </div>
   );
 };
+
+export default App;

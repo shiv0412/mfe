@@ -1,6 +1,6 @@
 import React from "react";
 
-const Landing = () => {
+const Landing: React.FC = () => {
   return (
     <React.Fragment>
       <div>marketing app</div>

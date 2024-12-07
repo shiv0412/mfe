@@ -3,9 +3,13 @@ import ReactDOM from "react-dom";
 import { createMemoryHistory, createBrowserHistory } from "history";
 
 import App from "./App";
+import { RouteHash } from "./components/models/SharedModals";
 
 // Mount function to start up the app
-const mount = (element, { onNavigate, defaultHistory, initialPath }) => {
+const mount = (
+  element: Element,
+  { onNavigate, defaultHistory, initialPath }: any
+) => {
   const history =
     defaultHistory ||
     createMemoryHistory({
@@ -19,10 +23,10 @@ const mount = (element, { onNavigate, defaultHistory, initialPath }) => {
   ReactDOM.render(<App history={history} />, element);
 
   return {
-    onParentNavigate({ pathname: nextPathname }) {
-      const { pathname } = history.location;
+    onParentNavigate(pathname: RouteHash) {
+      const nextPathname = history.location.pathname;
 
-      if (pathname !== nextPathname) {
+      if (pathname.pathname !== nextPathname) {
         history.push(nextPathname);
         // ReactDOM.unmountComponentAtNode(element);
       }
